@@ -1,82 +1,215 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>DH Tech - Tech Support for Businesses and Individuals</title>
-      <meta name="description" content="DH Tech provides tech support services for businesses and individuals in Japan.">
-      <script src="https://cdn.tailwindcss.com"></script>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-      <script>
-          tailwind.config = {
-              theme: {
-                  extend: {
-                      fontFamily: {
-                          sans: ['Inter', 'system-ui', 'sans-serif'],
-                      },
-                      colors: {
-                          gray: {
-                              50: '#f9fafb',
-                              100: '#f3f4f6',
-                              200: '#e5e7eb',
-                              300: '#d1d5db',
-                              400: '#9ca3af',
-                              500: '#6b7280',
-                              600: '#4b5563',
-                              700: '#374151',
-                              800: '#1f2937',
-                              900: '#111827',
-                          }
-                      }
-                  }
-              }
-          }
-      </script>
-  </head>
-  <body class="bg-white text-gray-700 font-sans min-h-screen flex flex-col">
-      <!-- Header -->
-      <header class="w-full px-6 py-4 flex justify-between items-center">
-          <img src="logo.png" alt="DH Tech" class="h-10 w-auto">
-          <a href="mailto:david@dhtech.jp" class="text-gray-500 hover:text-gray-900 transition-colors text-sm">
-              david@dhtech.jp
-          </a>
-      </header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DH Tech - Tech Support for Businesses and Individuals</title>
+    <meta name="description" content="DH Tech provides tech support services for businesses and individuals in Japan.">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        gray: {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            200: '#e5e7eb',
+                            300: '#d1d5db',
+                            400: '#9ca3af',
+                            500: '#6b7280',
+                            600: '#4b5563',
+                            700: '#374151',
+                            800: '#1f2937',
+                            900: '#111827',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Floating Skills Background */
+        .skills-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
 
-      <!-- Main Content -->
-      <main class="flex-grow flex flex-col items-center justify-center px-6 py-12">
-          <!-- Hero -->
-          <div class="text-center max-w-xl">
-              <img src="logo.png" alt="DH Tech" class="h-40 w-auto mx-auto mb-8">
-              <h1 class="text-3xl font-semibold text-gray-900 mb-4">DH Tech</h1>
-              <p class="text-xl text-gray-600 mb-8">Tech support for businesses and individuals</p>
-          </div>
+        .skill-pill {
+            position: absolute;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.25;
+            white-space: nowrap;
+            animation: float linear infinite;
+            animation-duration: var(--duration);
+            animation-delay: var(--delay);
+        }
 
-          <!-- Services Blurb -->
-          <div class="text-center max-w-md mb-12">
-              <p class="text-gray-600 leading-relaxed">
-                  Tech support for professional and personal settings
-                <br>
-                  Mac and PC, hardware and software
-                <br>
-                I help you get back to what matters
-              </p>
-          </div>
+        @keyframes float {
+            0% {
+                transform: translate(var(--start-x), var(--start-y));
+            }
+            100% {
+                transform: translate(var(--end-x), var(--end-y));
+            }
+        }
 
-          <!-- Contact -->
-          <div class="text-center">
-              <p class="text-gray-500 mb-3">Get in touch</p>
-              <a href="mailto:david@dhtech.jp"
-                 class="text-lg text-gray-900 hover:text-gray-600 transition-colors font-medium">
-                  david@dhtech.jp
-              </a>
-          </div>
-      </main>
+        /* Pastel color variations */
+        .pill-blue { background: #bfdbfe; color: #1e40af; }
+        .pill-green { background: #bbf7d0; color: #166534; }
+        .pill-purple { background: #ddd6fe; color: #5b21b6; }
+        .pill-peach { background: #fed7aa; color: #c2410c; }
+        .pill-pink { background: #fbcfe8; color: #be185d; }
+        .pill-teal { background: #99f6e4; color: #0f766e; }
 
-      <!-- Footer -->
-      <footer class="w-full px-6 py-6 text-center text-gray-400 text-sm">
-          <p>&copy; 2026 DH Tech.</p>
-      </footer>
-  </body>
-  </html>
+        @media (prefers-reduced-motion: reduce) {
+            .skill-pill {
+                animation: none;
+                transform: translate(var(--start-x), var(--start-y));
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            /* Dark mode pill colors */
+            .pill-blue { background: #1e3a5f; color: #93c5fd; }
+            .pill-green { background: #14532d; color: #86efac; }
+            .pill-purple { background: #3b0764; color: #c4b5fd; }
+            .pill-peach { background: #7c2d12; color: #fdba74; }
+            .pill-pink { background: #831843; color: #f9a8d4; }
+            .pill-teal { background: #134e4a; color: #5eead4; }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1e293b !important;
+                color: #94a3b8 !important;
+            }
+            h1 {
+                color: #f1f5f9 !important;
+            }
+            .text-gray-900 {
+                color: #f1f5f9 !important;
+            }
+            .text-gray-600 {
+                color: #94a3b8 !important;
+            }
+            .text-gray-500 {
+                color: #64748b !important;
+            }
+            .text-gray-400 {
+                color: #64748b !important;
+            }
+            a.text-gray-500:hover,
+            a.text-gray-900:hover {
+                color: #cbd5e1 !important;
+            }
+            .logo-invert {
+                filter: invert(1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-700 font-sans min-h-screen flex flex-col">
+    <!-- Floating Skills Background -->
+    <div class="skills-container" id="skillsContainer"></div>
+
+    <!-- Header -->
+    <header class="w-full px-6 py-4 flex justify-between items-center">
+        <img src="logo.png" alt="DH Tech" class="h-10 w-auto logo-invert">
+        <a href="mailto:david@dhtech.jp" class="text-gray-500 hover:text-gray-900 transition-colors text-sm">
+            david@dhtech.jp
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center px-6 py-12">
+        <!-- Hero -->
+        <div class="text-center max-w-xl">
+            <img src="logo.png" alt="DH Tech" class="h-40 w-auto mx-auto mb-8 logo-invert">
+            <h1 class="text-3xl font-semibold text-gray-900 mb-4">DH Tech</h1>
+            <p class="text-xl text-gray-600 mb-8">Tech support for businesses and individuals</p>
+        </div>
+
+        <!-- Services Blurb -->
+        <div class="text-center max-w-md mb-12">
+            <p class="text-gray-600 leading-relaxed">
+                Tech support for professional and personal settings.
+                Mac and PC, hardware and software—I help you get back to what matters.
+            </p>
+        </div>
+
+        <!-- Contact -->
+        <div class="text-center">
+            <p class="text-gray-500 mb-3">Get in touch</p>
+            <a href="mailto:david@dhtech.jp"
+               class="text-lg text-gray-900 hover:text-gray-600 transition-colors font-medium">
+                david@dhtech.jp
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full px-6 py-6 text-center text-gray-400 text-sm">
+        <p>&copy; 2026 DH Tech.</p>
+    </footer>
+    <script>
+        (function() {
+            const skills = [
+                'Routers', 'Printers', 'Modems', 'NAS', 'Networking', 'Cables & Wiring',
+                'Windows', 'macOS', 'iOS', 'Android',
+                'Microsoft Office', 'Email Setup', 'Cloud Storage', 'Backups', 'Antivirus', 'VPN',
+                'Troubleshooting', 'Data Recovery', 'System Setup', 'Performance Tuning', 'Remote Support'
+            ];
+
+            const colors = ['pill-blue', 'pill-green', 'pill-purple', 'pill-peach', 'pill-pink', 'pill-teal'];
+            const container = document.getElementById('skillsContainer');
+
+            skills.forEach((skill, index) => {
+                const pill = document.createElement('span');
+                pill.className = `skill-pill ${colors[index % colors.length]}`;
+                pill.textContent = skill;
+
+                // Random starting position
+                const startX = Math.random() * 100;
+                const startY = Math.random() * 100;
+
+                // Random ending position (different quadrant for diagonal movement)
+                const endX = startX + (Math.random() * 60 - 30);
+                const endY = startY + (Math.random() * 60 - 30);
+
+                // Random duration between 30-60 seconds
+                const duration = 30 + Math.random() * 30;
+
+                // Staggered delay so pills don't all start together
+                const delay = Math.random() * -duration;
+
+                pill.style.setProperty('--start-x', `${startX}vw`);
+                pill.style.setProperty('--start-y', `${startY}vh`);
+                pill.style.setProperty('--end-x', `${endX}vw`);
+                pill.style.setProperty('--end-y', `${endY}vh`);
+                pill.style.setProperty('--duration', `${duration}s`);
+                pill.style.setProperty('--delay', `${delay}s`);
+
+                container.appendChild(pill);
+            });
+        })();
+    </script>
+</body>
+</html>
