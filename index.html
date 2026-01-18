@@ -37,63 +37,102 @@
         }
     </script>
     <style>
-        /* Floating Skills Background */
-        .skills-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-            pointer-events: none;
+        /* Services Grid */
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
-        .skill-pill {
-            position: absolute;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
+        .service-pill {
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 13px;
             font-weight: 500;
-            opacity: 0.25;
+            opacity: 0.85;
             white-space: nowrap;
-            animation: float linear infinite;
-            animation-duration: var(--duration);
-            animation-delay: var(--delay);
         }
 
-        @keyframes float {
-            0% {
-                transform: translate(var(--start-x), var(--start-y));
-            }
-            100% {
-                transform: translate(var(--end-x), var(--end-y));
+        /* Service pill colors */
+        .service-blue { background: #bfdbfe; color: #1e40af; }
+        .service-green { background: #bbf7d0; color: #166534; }
+        .service-purple { background: #ddd6fe; color: #5b21b6; }
+        .service-peach { background: #fed7aa; color: #c2410c; }
+        .service-pink { background: #fbcfe8; color: #be185d; }
+        .service-teal { background: #99f6e4; color: #0f766e; }
+
+        /* Hide grid on mobile */
+        @media (max-width: 639px) {
+            .services-grid {
+                display: none;
             }
         }
 
-        /* Pastel color variations */
-        .pill-blue { background: #bfdbfe; color: #1e40af; }
-        .pill-green { background: #bbf7d0; color: #166534; }
-        .pill-purple { background: #ddd6fe; color: #5b21b6; }
-        .pill-peach { background: #fed7aa; color: #c2410c; }
-        .pill-pink { background: #fbcfe8; color: #be185d; }
-        .pill-teal { background: #99f6e4; color: #0f766e; }
+        /* Mobile Ticker */
+        .services-ticker {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.9);
+            border-top: 1px solid #e5e7eb;
+            overflow: hidden;
+            z-index: 50;
+        }
 
-        @media (prefers-reduced-motion: reduce) {
-            .skill-pill {
+        .ticker-track {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            animation: scroll 35s linear infinite;
+            width: max-content;
+        }
+
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+
+        .ticker-content {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            color: #6b7280;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .ticker-content span {
+            margin: 0 12px;
+        }
+
+        .ticker-separator {
+            color: #d1d5db;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Show ticker only on mobile */
+        @media (max-width: 639px) {
+            .services-ticker {
+                display: block;
+            }
+            footer {
+                padding-bottom: 50px;
+            }
+        }
+
+        @media (max-width: 639px) and (prefers-reduced-motion: reduce) {
+            .ticker-track {
                 animation: none;
-                transform: translate(var(--start-x), var(--start-y));
             }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            /* Dark mode pill colors */
-            .pill-blue { background: #1e3a5f; color: #93c5fd; }
-            .pill-green { background: #14532d; color: #86efac; }
-            .pill-purple { background: #3b0764; color: #c4b5fd; }
-            .pill-peach { background: #7c2d12; color: #fdba74; }
-            .pill-pink { background: #831843; color: #f9a8d4; }
-            .pill-teal { background: #134e4a; color: #5eead4; }
         }
 
         @media (prefers-color-scheme: dark) {
@@ -123,13 +162,26 @@
             .logo-invert {
                 filter: invert(1);
             }
+            .service-blue { background: #1e3a5f; color: #93c5fd; }
+            .service-green { background: #14532d; color: #86efac; }
+            .service-purple { background: #3b0764; color: #c4b5fd; }
+            .service-peach { background: #7c2d12; color: #fdba74; }
+            .service-pink { background: #831843; color: #f9a8d4; }
+            .service-teal { background: #134e4a; color: #5eead4; }
+            .services-ticker {
+                background: rgba(30, 41, 59, 0.95);
+                border-top-color: #334155;
+            }
+            .ticker-content {
+                color: #94a3b8;
+            }
+            .ticker-separator {
+                color: #475569;
+            }
         }
     </style>
 </head>
 <body class="bg-white text-gray-700 font-sans min-h-screen flex flex-col">
-    <!-- Floating Skills Background -->
-    <div class="skills-container" id="skillsContainer"></div>
-
     <!-- Header -->
     <header class="w-full px-6 py-4 flex justify-between items-center">
         <img src="logo.png" alt="DH Tech" class="h-10 w-auto logo-invert">
@@ -155,6 +207,25 @@
             </p>
         </div>
 
+        <!-- Services Grid (desktop/tablet) -->
+        <div class="services-grid mb-12">
+            <span class="service-pill service-blue">Routers</span>
+            <span class="service-pill service-green">Printers</span>
+            <span class="service-pill service-purple">NAS</span>
+            <span class="service-pill service-teal">Networking</span>
+            <span class="service-pill service-peach">Windows</span>
+            <span class="service-pill service-pink">macOS</span>
+            <span class="service-pill service-blue">iOS</span>
+            <span class="service-pill service-green">Android</span>
+            <span class="service-pill service-purple">Microsoft Office</span>
+            <span class="service-pill service-teal">Email Setup</span>
+            <span class="service-pill service-peach">Cloud Storage</span>
+            <span class="service-pill service-pink">Backups</span>
+            <span class="service-pill service-blue">Troubleshooting</span>
+            <span class="service-pill service-green">Data Recovery</span>
+            <span class="service-pill service-purple">Remote Support</span>
+        </div>
+
         <!-- Contact -->
         <div class="text-center">
             <p class="text-gray-500 mb-3">Get in touch</p>
@@ -169,47 +240,45 @@
     <footer class="w-full px-6 py-6 text-center text-gray-400 text-sm">
         <p>&copy; 2026 DH Tech.</p>
     </footer>
-    <script>
-        (function() {
-            const skills = [
-                'Routers', 'Printers', 'Modems', 'NAS', 'Networking', 'Cables & Wiring',
-                'Windows', 'macOS', 'iOS', 'Android',
-                'Microsoft Office', 'Email Setup', 'Cloud Storage', 'Backups', 'Antivirus', 'VPN',
-                'Troubleshooting', 'Data Recovery', 'System Setup', 'Performance Tuning', 'Remote Support'
-            ];
 
-            const colors = ['pill-blue', 'pill-green', 'pill-purple', 'pill-peach', 'pill-pink', 'pill-teal'];
-            const container = document.getElementById('skillsContainer');
-
-            skills.forEach((skill, index) => {
-                const pill = document.createElement('span');
-                pill.className = `skill-pill ${colors[index % colors.length]}`;
-                pill.textContent = skill;
-
-                // Random starting position
-                const startX = Math.random() * 100;
-                const startY = Math.random() * 100;
-
-                // Random ending position (different quadrant for diagonal movement)
-                const endX = startX + (Math.random() * 60 - 30);
-                const endY = startY + (Math.random() * 60 - 30);
-
-                // Random duration between 30-60 seconds
-                const duration = 30 + Math.random() * 30;
-
-                // Staggered delay so pills don't all start together
-                const delay = Math.random() * -duration;
-
-                pill.style.setProperty('--start-x', `${startX}vw`);
-                pill.style.setProperty('--start-y', `${startY}vh`);
-                pill.style.setProperty('--end-x', `${endX}vw`);
-                pill.style.setProperty('--end-y', `${endY}vh`);
-                pill.style.setProperty('--duration', `${duration}s`);
-                pill.style.setProperty('--delay', `${delay}s`);
-
-                container.appendChild(pill);
-            });
-        })();
-    </script>
+    <!-- Mobile Ticker -->
+    <div class="services-ticker">
+        <div class="ticker-track">
+            <div class="ticker-content">
+                <span>Routers</span><span class="ticker-separator">·</span>
+                <span>Printers</span><span class="ticker-separator">·</span>
+                <span>NAS</span><span class="ticker-separator">·</span>
+                <span>Networking</span><span class="ticker-separator">·</span>
+                <span>Windows</span><span class="ticker-separator">·</span>
+                <span>macOS</span><span class="ticker-separator">·</span>
+                <span>iOS</span><span class="ticker-separator">·</span>
+                <span>Android</span><span class="ticker-separator">·</span>
+                <span>Microsoft Office</span><span class="ticker-separator">·</span>
+                <span>Email Setup</span><span class="ticker-separator">·</span>
+                <span>Cloud Storage</span><span class="ticker-separator">·</span>
+                <span>Backups</span><span class="ticker-separator">·</span>
+                <span>Troubleshooting</span><span class="ticker-separator">·</span>
+                <span>Data Recovery</span><span class="ticker-separator">·</span>
+                <span>Remote Support</span><span class="ticker-separator">·</span>
+            </div>
+            <div class="ticker-content" aria-hidden="true">
+                <span>Routers</span><span class="ticker-separator">·</span>
+                <span>Printers</span><span class="ticker-separator">·</span>
+                <span>NAS</span><span class="ticker-separator">·</span>
+                <span>Networking</span><span class="ticker-separator">·</span>
+                <span>Windows</span><span class="ticker-separator">·</span>
+                <span>macOS</span><span class="ticker-separator">·</span>
+                <span>iOS</span><span class="ticker-separator">·</span>
+                <span>Android</span><span class="ticker-separator">·</span>
+                <span>Microsoft Office</span><span class="ticker-separator">·</span>
+                <span>Email Setup</span><span class="ticker-separator">·</span>
+                <span>Cloud Storage</span><span class="ticker-separator">·</span>
+                <span>Backups</span><span class="ticker-separator">·</span>
+                <span>Troubleshooting</span><span class="ticker-separator">·</span>
+                <span>Data Recovery</span><span class="ticker-separator">·</span>
+                <span>Remote Support</span><span class="ticker-separator">·</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
