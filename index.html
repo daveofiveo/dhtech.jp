@@ -7,187 +7,13 @@
     <meta name="description" content="DH Tech provides tech support services for businesses and individuals in Japan.">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    },
-                    colors: {
-                        gray: {
-                            50: '#f9fafb',
-                            100: '#f3f4f6',
-                            200: '#e5e7eb',
-                            300: '#d1d5db',
-                            400: '#9ca3af',
-                            500: '#6b7280',
-                            600: '#4b5563',
-                            700: '#374151',
-                            800: '#1f2937',
-                            900: '#111827',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Services Grid */
-        .services-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .service-pill {
-            padding: 6px 14px;
-            border-radius: 16px;
-            font-size: 13px;
-            font-weight: 500;
-            opacity: 0.85;
-            white-space: nowrap;
-        }
-
-        /* Service pill colors */
-        .service-blue { background: #bfdbfe; color: #1e40af; }
-        .service-green { background: #bbf7d0; color: #166534; }
-        .service-purple { background: #ddd6fe; color: #5b21b6; }
-        .service-peach { background: #fed7aa; color: #c2410c; }
-        .service-pink { background: #fbcfe8; color: #be185d; }
-        .service-teal { background: #99f6e4; color: #0f766e; }
-
-        /* Hide grid on mobile */
-        @media (max-width: 639px) {
-            .services-grid {
-                display: none;
-            }
-        }
-
-        /* Mobile Ticker */
-        .services-ticker {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 44px;
-            background: rgba(255, 255, 255, 0.9);
-            border-top: 1px solid #e5e7eb;
-            overflow: hidden;
-            z-index: 50;
-        }
-
-        .ticker-track {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            animation: scroll 35s linear infinite;
-            width: max-content;
-        }
-
-        .ticker-track:hover {
-            animation-play-state: paused;
-        }
-
-        .ticker-content {
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-            color: #6b7280;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-
-        .ticker-content span {
-            margin: 0 12px;
-        }
-
-        .ticker-separator {
-            color: #d1d5db;
-        }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Show ticker only on mobile */
-        @media (max-width: 639px) {
-            .services-ticker {
-                display: block;
-            }
-            footer {
-                padding-bottom: 50px;
-            }
-        }
-
-        @media (max-width: 639px) and (prefers-reduced-motion: reduce) {
-            .ticker-track {
-                animation: none;
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #1e293b !important;
-                color: #94a3b8 !important;
-            }
-            h1 {
-                color: #f1f5f9 !important;
-            }
-            .text-gray-900 {
-                color: #f1f5f9 !important;
-            }
-            .text-gray-600 {
-                color: #94a3b8 !important;
-            }
-            .text-gray-500 {
-                color: #64748b !important;
-            }
-            .text-gray-400 {
-                color: #64748b !important;
-            }
-            a.text-gray-500:hover,
-            a.text-gray-900:hover {
-                color: #cbd5e1 !important;
-            }
-            .logo-invert {
-                filter: invert(1);
-            }
-            .service-blue { background: #1e3a5f; color: #93c5fd; }
-            .service-green { background: #14532d; color: #86efac; }
-            .service-purple { background: #3b0764; color: #c4b5fd; }
-            .service-peach { background: #7c2d12; color: #fdba74; }
-            .service-pink { background: #831843; color: #f9a8d4; }
-            .service-teal { background: #134e4a; color: #5eead4; }
-            .services-ticker {
-                background: rgba(30, 41, 59, 0.95);
-                border-top-color: #334155;
-            }
-            .ticker-content {
-                color: #94a3b8;
-            }
-            .ticker-separator {
-                color: #475569;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-white text-gray-700 font-sans min-h-screen flex flex-col">
     <!-- Header -->
     <header class="w-full px-6 py-4 flex justify-between items-center">
         <img src="logo.png" alt="DH Tech" class="h-10 w-auto logo-invert">
-        <a href="mailto:david@dhtech.jp" class="text-gray-500 hover:text-gray-900 transition-colors text-sm">
-            david@dhtech.jp
-        </a>
+        <a id="header-email" href="#" class="text-gray-500 hover:text-gray-900 transition-colors text-sm"></a>
     </header>
 
     <!-- Main Content -->
@@ -229,10 +55,8 @@
         <!-- Contact -->
         <div class="text-center">
             <p class="text-gray-500 mb-3">Get in touch</p>
-            <a href="mailto:david@dhtech.jp"
-               class="text-lg text-gray-900 hover:text-gray-600 transition-colors font-medium">
-                david@dhtech.jp
-            </a>
+            <a id="contact-email" href="#"
+               class="text-lg text-gray-900 hover:text-gray-600 transition-colors font-medium"></a>
         </div>
     </main>
 
@@ -280,5 +104,8 @@
             </div>
         </div>
     </div>
+
+    <script src="email.js" defer></script>
 </body>
 </html>
+
