@@ -1,7 +1,7 @@
 (function() {
     var u = 'david', d = 'dhtech.jp', e = u + '@' + d;
     var els = [
-        document.getElementById('header-email'),
+        document.getElementById('hero-email'),
         document.getElementById('contact-email')
     ];
     els.forEach(function(el) {
