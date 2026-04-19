@@ -3,109 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DH Tech - Tech Support for Businesses and Individuals</title>
-    <meta name="description" content="DH Tech provides tech support services for businesses and individuals in Japan.">
+    <title>DH Tech — Patient Tech Support for Seniors | Iowa</title>
+    <meta name="description" content="Patient, friendly tech support for seniors and their families in Iowa. iPhone, iPad, computer help, scam protection, and ongoing support.">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-white text-gray-700 font-sans min-h-screen flex flex-col">
-    <!-- Header -->
-    <header class="w-full px-6 py-4 flex justify-between items-center">
-        <img src="logo.png" alt="DH Tech" class="h-10 w-auto logo-invert">
-        <a id="header-email" href="#" class="text-gray-500 hover:text-gray-900 transition-colors text-sm"></a>
+<body class="bg-white text-slate-700 font-sans">
+
+    <!-- ── 1. Header ─────────────────────────────────────────────── -->
+    <header class="sticky top-0 z-50 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="logo.png" alt="DH Tech" class="h-8 w-auto" style="filter:invert(1)">
+            <a href="#contact"
+               class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                Get Help
+            </a>
+        </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow flex flex-col items-center justify-center px-6 py-12">
-        <!-- Hero -->
-        <div class="text-center max-w-xl">
-            <img src="logo.png" alt="DH Tech" class="h-40 w-auto mx-auto mb-8 logo-invert">
-            <h1 class="text-3xl font-semibold text-gray-900 mb-4">DH Tech</h1>
-            <p class="text-xl text-gray-600 mb-8">Tech support for businesses and individuals</p>
-        </div>
-
-        <!-- Services Blurb -->
-        <div class="text-center max-w-md mb-12">
-            <p class="text-gray-600 leading-relaxed">
-                Tech support for professional and personal settings.
-                Mac and PC, hardware and software—I help you get back to what matters.
+    <!-- ── 2. Hero ───────────────────────────────────────────────── -->
+    <section class="py-20 px-6 text-center bg-white">
+        <div class="max-w-2xl mx-auto">
+            <p class="text-xs font-semibold tracking-widest text-blue-500 uppercase mb-4">Tech Support · Iowa</p>
+            <h1 class="text-4xl sm:text-5xl font-bold text-navy leading-tight mb-6">
+                Tech help for the<br>people you love
+            </h1>
+            <p class="text-lg text-slate-500 mb-8 leading-relaxed">
+                Patient, friendly tech support for seniors.<br class="hidden sm:block">
+                No jargon. No rush. Just real help.
+            </p>
+            <a href="#contact"
+               class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-base font-medium transition-colors">
+                Get in touch →
+            </a>
+            <p class="mt-4 text-sm text-slate-400">
+                or email <a id="hero-email" href="#" aria-label="Email DH Tech" class="hover:text-slate-600 transition-colors"></a>
             </p>
         </div>
+    </section>
 
-        <!-- Services Grid (desktop/tablet) -->
-        <div class="services-grid mb-12">
-            <span class="service-pill service-blue">Routers</span>
-            <span class="service-pill service-green">Printers</span>
-            <span class="service-pill service-purple">NAS</span>
-            <span class="service-pill service-teal">Networking</span>
-            <span class="service-pill service-peach">Windows</span>
-            <span class="service-pill service-pink">macOS</span>
-            <span class="service-pill service-blue">iOS</span>
-            <span class="service-pill service-green">Android</span>
-            <span class="service-pill service-purple">Microsoft Office</span>
-            <span class="service-pill service-teal">Email Setup</span>
-            <span class="service-pill service-peach">Cloud Storage</span>
-            <span class="service-pill service-pink">Backups</span>
-            <span class="service-pill service-blue">Troubleshooting</span>
-            <span class="service-pill service-green">Data Recovery</span>
-            <span class="service-pill service-purple">Remote Support</span>
+    <!-- ── 3. Services ───────────────────────────────────────────── -->
+    <section class="py-16 px-6 bg-slate-50">
+        <div class="max-w-2xl mx-auto">
+            <p class="text-xs font-semibold tracking-widest text-blue-500 uppercase text-center mb-10">What I Help With</p>
+
+            <!-- Card 1: Devices -->
+            <div class="service-card bg-white border border-slate-200 rounded-xl mb-3 overflow-hidden">
+                <button class="service-card-header w-full px-6 py-5 flex items-center justify-between text-left"
+                        aria-expanded="false" aria-controls="card-body-devices">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-blue-50 rounded-lg p-2 text-2xl leading-none">📱</div>
+                        <div>
+                            <h3 class="font-bold text-navy">Devices &amp; Setup</h3>
+                            <p class="text-sm text-slate-500">iPhone, iPad, computers &amp; more</p>
+                        </div>
+                    </div>
+                    <svg class="service-chevron w-5 h-5 text-blue-500 flex-shrink-0"
+                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div id="card-body-devices" class="service-card-body hidden px-6 pb-6 border-t border-slate-100">
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pt-4">
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-blue-500 flex-shrink-0">✓</span>iPhone &amp; iPad setup</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-blue-500 flex-shrink-0">✓</span>Android phones &amp; tablets</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-blue-500 flex-shrink-0">✓</span>Windows &amp; Mac computers</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-blue-500 flex-shrink-0">✓</span>Printers &amp; scanners</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-blue-500 flex-shrink-0">✓</span>Email setup &amp; troubleshooting</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-blue-500 flex-shrink-0">✓</span>Video calling (Zoom, FaceTime)</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-blue-500 flex-shrink-0">✓</span>Wi-Fi &amp; router setup</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-blue-500 flex-shrink-0">✓</span>Smart TVs &amp; streaming</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-blue-500 flex-shrink-0">✓</span>iCloud &amp; Google account help</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-blue-500 flex-shrink-0">✓</span>App installs &amp; updates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2: Safety -->
+            <div class="service-card bg-white border border-slate-200 rounded-xl mb-3 overflow-hidden">
+                <button class="service-card-header w-full px-6 py-5 flex items-center justify-between text-left"
+                        aria-expanded="false" aria-controls="card-body-safety">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-green-50 rounded-lg p-2 text-2xl leading-none">🛡️</div>
+                        <div>
+                            <h3 class="font-bold text-navy">Safety &amp; Security</h3>
+                            <p class="text-sm text-slate-500">Scam protection, passwords &amp; privacy</p>
+                        </div>
+                    </div>
+                    <svg class="service-chevron w-5 h-5 text-blue-500 flex-shrink-0"
+                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div id="card-body-safety" class="service-card-body hidden px-6 pb-6 border-t border-slate-100">
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pt-4">
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-green-500 flex-shrink-0">✓</span>Scam &amp; phishing recognition</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-green-500 flex-shrink-0">✓</span>Password setup &amp; managers</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-green-500 flex-shrink-0">✓</span>Two-factor authentication</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-green-500 flex-shrink-0">✓</span>Safe online shopping</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-green-500 flex-shrink-0">✓</span>Virus &amp; malware removal</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-green-500 flex-shrink-0">✓</span>Privacy settings review</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-green-500 flex-shrink-0">✓</span>Suspicious email &amp; call advice</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-green-500 flex-shrink-0">✓</span>Account recovery help</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3: Ongoing Support -->
+            <div class="service-card bg-white border border-slate-200 rounded-xl overflow-hidden">
+                <button class="service-card-header w-full px-6 py-5 flex items-center justify-between text-left"
+                        aria-expanded="false" aria-controls="card-body-support">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-purple-50 rounded-lg p-2 text-2xl leading-none">🤝</div>
+                        <div>
+                            <h3 class="font-bold text-navy">Ongoing Support</h3>
+                            <p class="text-sm text-slate-500">A trusted person to call anytime</p>
+                        </div>
+                    </div>
+                    <svg class="service-chevron w-5 h-5 text-blue-500 flex-shrink-0"
+                         fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div id="card-body-support" class="service-card-body hidden px-6 pb-6 border-t border-slate-100">
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pt-4">
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-purple-500 flex-shrink-0">✓</span>Regular check-in calls</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-purple-500 flex-shrink-0">✓</span>Remote desktop help</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-purple-500 flex-shrink-0">✓</span>In-person visits (Iowa)</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-purple-500 flex-shrink-0">✓</span>Questions answered anytime</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-purple-500 flex-shrink-0">✓</span>Patient, no-rush explanations</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-purple-500 flex-shrink-0">✓</span>Family coordination &amp; updates</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-purple-500 flex-shrink-0">✓</span>Teaching at your own pace</li>
+                        <li class="flex items-start gap-2 text-sm text-slate-700"><span class="text-purple-500 flex-shrink-0">✓</span>New device orientation</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
+    </section>
 
-        <!-- Contact -->
-        <div class="text-center">
-            <p class="text-gray-500 mb-3">Get in touch</p>
-            <a id="contact-email" href="#"
-               class="text-lg text-gray-900 hover:text-gray-600 transition-colors font-medium"></a>
+    <!-- ── 4. How It Works ───────────────────────────────────────── -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-2xl mx-auto">
+            <p class="text-xs font-semibold tracking-widest text-blue-500 uppercase text-center mb-10">How It Works</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-10 h-10 bg-blue-50 text-blue-500 font-bold text-lg rounded-full flex items-center justify-center mx-auto mb-4">1</div>
+                    <h4 class="font-semibold text-navy mb-2">Reach out</h4>
+                    <p class="text-sm text-slate-500">Send a quick message describing the problem</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-10 h-10 bg-blue-50 text-blue-500 font-bold text-lg rounded-full flex items-center justify-center mx-auto mb-4">2</div>
+                    <h4 class="font-semibold text-navy mb-2">We connect</h4>
+                    <p class="text-sm text-slate-500">Phone, video call, or in-person — whatever works</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-10 h-10 bg-blue-50 text-blue-500 font-bold text-lg rounded-full flex items-center justify-center mx-auto mb-4">3</div>
+                    <h4 class="font-semibold text-navy mb-2">Problem solved</h4>
+                    <p class="text-sm text-slate-500">Clear explanations, no jargon, no rush</p>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Footer -->
-    <footer class="w-full px-6 py-6 text-center text-gray-400 text-sm">
-        <p>&copy; 2026 DH Tech.</p>
+    <!-- ── 5. About David ────────────────────────────────────────── -->
+    <section class="py-16 px-6 bg-slate-50">
+        <div class="max-w-2xl mx-auto">
+            <p class="text-xs font-semibold tracking-widest text-blue-500 uppercase text-center mb-10">About David</p>
+            <div class="flex flex-col sm:flex-row items-center gap-8">
+                <div class="w-28 h-28 rounded-full bg-slate-200 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <!-- To add photo: replace contents with <img src="david.jpg" alt="David Huckleberry" class="w-full h-full object-cover"> -->
+                    <svg class="w-16 h-16 text-slate-400" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+                    </svg>
+                </div>
+                <p class="text-slate-600 leading-relaxed text-center sm:text-left">
+                    Hi, I'm David. I started DH Tech because I believe everyone deserves patient, friendly help
+                    with technology — especially the people who didn't grow up with it. Whether it's helping Mom
+                    video call the grandkids or protecting Dad from online scams, I'm here to make tech less
+                    stressful for your whole family.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── 6. Contact Form ───────────────────────────────────────── -->
+    <section id="contact" class="py-16 px-6 bg-white">
+        <div class="max-w-lg mx-auto">
+            <p class="text-xs font-semibold tracking-widest text-blue-500 uppercase text-center mb-2">Get in Touch</p>
+            <h2 class="text-2xl font-bold text-navy text-center mb-8">How can I help?</h2>
+            <form action="https://formspree.io/f/xjgjrebz" method="POST" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Your name</label>
+                    <input type="text" id="name" name="name" required
+                           class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Your email</label>
+                    <input type="email" id="email" name="email" required
+                           class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-slate-700 mb-1">What do you need help with?</label>
+                    <textarea id="message" name="message" rows="5" required
+                              class="w-full border border-slate-300 rounded-lg px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"></textarea>
+                </div>
+                <button type="submit"
+                        class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-medium transition-colors">
+                    Send Message
+                </button>
+            </form>
+            <p class="text-center mt-6 text-sm text-slate-400">
+                Or email directly: <a id="contact-email" href="#" aria-label="Email DH Tech" class="text-slate-600 hover:text-slate-900 transition-colors"></a>
+            </p>
+        </div>
+    </section>
+
+    <!-- ── 7. Footer ─────────────────────────────────────────────── -->
+    <footer class="bg-slate-900 py-6 text-center text-slate-500 text-sm">
+        <p>© 2026 DH Tech · Iowa</p>
     </footer>
 
-    <!-- Mobile Ticker -->
-    <div class="services-ticker">
-        <div class="ticker-track">
-            <div class="ticker-content">
-                <span>Routers</span><span class="ticker-separator">·</span>
-                <span>Printers</span><span class="ticker-separator">·</span>
-                <span>NAS</span><span class="ticker-separator">·</span>
-                <span>Networking</span><span class="ticker-separator">·</span>
-                <span>Windows</span><span class="ticker-separator">·</span>
-                <span>macOS</span><span class="ticker-separator">·</span>
-                <span>iOS</span><span class="ticker-separator">·</span>
-                <span>Android</span><span class="ticker-separator">·</span>
-                <span>Microsoft Office</span><span class="ticker-separator">·</span>
-                <span>Email Setup</span><span class="ticker-separator">·</span>
-                <span>Cloud Storage</span><span class="ticker-separator">·</span>
-                <span>Backups</span><span class="ticker-separator">·</span>
-                <span>Troubleshooting</span><span class="ticker-separator">·</span>
-                <span>Data Recovery</span><span class="ticker-separator">·</span>
-                <span>Remote Support</span><span class="ticker-separator">·</span>
-            </div>
-            <div class="ticker-content" aria-hidden="true">
-                <span>Routers</span><span class="ticker-separator">·</span>
-                <span>Printers</span><span class="ticker-separator">·</span>
-                <span>NAS</span><span class="ticker-separator">·</span>
-                <span>Networking</span><span class="ticker-separator">·</span>
-                <span>Windows</span><span class="ticker-separator">·</span>
-                <span>macOS</span><span class="ticker-separator">·</span>
-                <span>iOS</span><span class="ticker-separator">·</span>
-                <span>Android</span><span class="ticker-separator">·</span>
-                <span>Microsoft Office</span><span class="ticker-separator">·</span>
-                <span>Email Setup</span><span class="ticker-separator">·</span>
-                <span>Cloud Storage</span><span class="ticker-separator">·</span>
-                <span>Backups</span><span class="ticker-separator">·</span>
-                <span>Troubleshooting</span><span class="ticker-separator">·</span>
-                <span>Data Recovery</span><span class="ticker-separator">·</span>
-                <span>Remote Support</span><span class="ticker-separator">·</span>
-            </div>
-        </div>
-    </div>
-
     <script src="email.js" defer></script>
+    <script src="main.js" defer></script>
 </body>
 </html>
-
